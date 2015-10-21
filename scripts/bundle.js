@@ -12,13 +12,14 @@ function optionPicked(event) {
 		inputArea.innerHTML = '<lable>Length in feet</lable>' + '<input type="number" id="length"><br>' + '<lable>Width in feet</lable>' + '<input type="number" id="width"><br>' + '<button onclick="calculate();">Calculate</button>';
 	} else {
 		inputArea.innerHTML = '';
+		results.innerHTML = '';
 	}
 }
 function calculate() {
 	event.preventDefault();
 	var impericalArea = document.getElementById('length').value * document.getElementById('width').value;
 	var metricArea = impericalArea * 0.09290304;
-	results.innerHTML = metricArea + ' Square meters<br>' + impericalArea + ' Square feet';
+	results.innerHTML = metricArea.toFixed(2) + ' Square meters<br>' + impericalArea.toFixed(2) + ' Square feet';
 }
 
 },{}]},{},[1])
